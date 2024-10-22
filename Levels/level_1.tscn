@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://df6dewxua8wsf"]
+
+[ext_resource type="Material" uid="uid://cn1gsy15bkaff" path="res://materials/grid.tres" id="1_t7p35"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htddk"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_waica"]
+material = ExtResource("1_t7p35")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_juqh7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3fprv"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mj2an"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2jggg"]
+left_to_right = 0.0
+size = Vector3(10, 5, 5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="GroundShape" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_htddk")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_waica")
+
+[node name="Box" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56288, 3.5, -12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Box"]
+shape = SubResource("BoxShape3D_juqh7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Box"]
+mesh = SubResource("BoxMesh_3fprv")
+
+[node name="Ramp" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.188, 3.5, 2.28232)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ramp"]
+shape = SubResource("ConvexPolygonShape3D_mj2an")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ramp"]
+mesh = SubResource("PrismMesh_2jggg")
+
+[node name="Wall" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Wall"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Wall"]
