@@ -7,8 +7,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gcyeh"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_n6uja")
+TILT_LOWER_LIMIT = null
+TILT_UPPER_LIMIT = null
+CAMERA_CONTROLLER = NodePath("Camera Controller/Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_bld8p")
@@ -21,3 +24,6 @@ shape = SubResource("CapsuleShape3D_gcyeh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806325, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Controller"]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Camera Controller/Camera3D"]
+update_mode = 1
