@@ -9,8 +9,6 @@
 
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_n6uja")
-TILT_LOWER_LIMIT = null
-TILT_UPPER_LIMIT = null
 CAMERA_CONTROLLER = NodePath("Camera Controller/Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

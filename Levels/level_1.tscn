@@ -85,7 +85,8 @@ mesh = SubResource("BoxMesh_f0kak")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_doqwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
-TILT_LOWER_LIMIT = null
-TILT_UPPER_LIMIT = null
+TILT_LOWER_LIMIT = -1.5708
+TILT_UPPER_LIMIT = 1.5708
+MOUSE_SENSITIVITY = 0.5
 
 [node name="WE_AutumnSky" parent="." instance=ExtResource("3_5sjhx")]
