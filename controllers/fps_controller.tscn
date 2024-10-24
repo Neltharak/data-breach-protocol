@@ -22,6 +22,3 @@ shape = SubResource("CapsuleShape3D_gcyeh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806325, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Controller"]
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Camera Controller/Camera3D"]
-update_mode = 1
